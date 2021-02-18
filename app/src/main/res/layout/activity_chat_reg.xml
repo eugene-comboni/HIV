@@ -24,41 +24,50 @@
             android:layout_height="wrap_content"
             android:text="Create a new Account"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/username"
-            android:layout_marginTop="10dp"
-            android:hint="Username"/>
-
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Username" />
+
+        <EditText
             android:id="@+id/email"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="10dp"
-            android:hint="Email"/>
-
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password"
-            android:inputType="textPassword"
             android:layout_marginTop="10dp"
-            android:hint="Password"/>
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Password"
+            android:inputType="textPassword" />
 
         <Button
+            android:id="@+id/btn_Register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
-            android:id="@+id/btn_Register"
-            android:background="#49C4DF"
-            android:textColor="#ffffff"
             android:layout_marginTop="10dp"
-            />
+            android:background="#49C4DF"
+            android:text="Register"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/toLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="Already have an account? Sigin"
+            android:textAlignment="center"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 

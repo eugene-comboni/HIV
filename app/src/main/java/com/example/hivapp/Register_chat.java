@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -30,6 +31,7 @@ public class Register_chat extends Fragment {
 
     EditText username, email, password;
     Button btnRegister;
+    TextView toLogin;
 
     FirebaseAuth mAuth;
     DatabaseReference reference;
@@ -45,7 +47,14 @@ public class Register_chat extends Fragment {
         email = view.findViewById(R.id.email);
         password = view.findViewById(R.id.password);
         btnRegister = view.findViewById(R.id.btn_Register);
+        toLogin = view.findViewById(R.id.toLogin);
 
+        toLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), chatLogin.class));
+            }
+        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

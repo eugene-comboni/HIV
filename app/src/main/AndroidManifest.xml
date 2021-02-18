@@ -13,19 +13,19 @@
         <activity android:name=".chatLogin" />
         <activity android:name=".chatReg" />
         <activity android:name=".Dashboard" />
-        <activity android:name=".mainActivity_chat">
+        <activity android:name=".mainActivity_chat"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Common.OnBoarding" />
+        <activity android:name=".Chat" />
+        <activity android:name=".Register" />
+        <activity android:name=".Login" />
+        <activity android:name=".Common.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Common.OnBoarding" />
-        <activity android:name=".Chat" />
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
-        <activity android:name=".Common.SplashScreen" />
 
         <meta-data
             android:name="preloaded_fonts"
