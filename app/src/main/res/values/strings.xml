@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">HIV App</string>
+    <string name="RegisterTitle">Welcome Onboard</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!--Strings for On Boarding Screen-->
+
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="Get_Started">Get Started</string>
+
+    <string name="first_slide_title">Articles and News</string>
+    <string name="second_slide_title">Real-time Chat</string>
+    <string name="third_slide_title">Book Appointments</string>
+
+    <string name="first_slide_description">Be informed and up-to date with the latest articles and research materials on HIV</string>
+    <string name="second_slide_description">Talk and Share experiences with doctors and other people living with HIV</string>
+    <string name="third_slide_description">Booking appointments and clinic visits online help save time waiting on long queues</string>
+    <string name="Splash_Title">HIV M-Care</string>
+    <string name="title_activity_bottom__nav">MainActivity</string>
+    <string name="title_activity_bottom_navigation">MainActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello chat Activity</string>
+    <string name="home">Home</string>
+    <string name="appointment">Book Appointment</string>
+    <string name="store">Store</string>
+    <string name="title_activity_dashboard">MainActivity</string>
+    <string name="hello_user_fragment">Hello user</string>
+</resources>
