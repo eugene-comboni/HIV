@@ -2,16 +2,17 @@ package com.example.hivapp.Model;
 
 public class User {
 
-    private String id, username, imageURL, status;
+    private String id, username, imageURL, status, search;
 
 
 
 
-    public User(String id, String username, String imageURL, String status) {
+    public User(String id, String username, String imageURL, String status, String search) {
         this.id = id;
         this.username = username;
         this.imageURL = imageURL;
         this.status = status;
+        this.search = search;
     }
 
     public User() {
@@ -48,5 +49,13 @@ public class User {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getSearch() {
+        return search;
+    }
+
+    public void setSearch(String search) {
+        this.search = search;
     }
 }
