@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ public class chatLogin extends AppCompatActivity {
     Button btnLogin;
 
     FirebaseAuth mAuth;
+    TextView forgot_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,13 @@ public class chatLogin extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         initViews();
+
+        forgot_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(chatLogin.this, ResetPassword.class));
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +81,8 @@ public class chatLogin extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btnLogin = findViewById(R.id.btn_Login);
+        forgot_password = findViewById(R.id.forgot_password);
+
 
     }
 }

@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hivapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,11 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HIVApp">
-        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".ResetPassword" android:parentActivityName=".chatLogin"></activity>
+        <activity android:name=".MessageActivity" />
         <activity android:name=".chatLogin" />
         <activity android:name=".chatReg" />
         <activity android:name=".Dashboard" />
-        <activity android:name=".mainActivity_chat"/>
+        <activity android:name=".mainActivity_chat" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Common.OnBoarding" />
         <activity android:name=".Chat" />
