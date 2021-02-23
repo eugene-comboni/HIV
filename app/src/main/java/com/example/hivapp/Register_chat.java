@@ -52,7 +52,7 @@ public class Register_chat extends Fragment {
         toLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), chatLogin.class));
+                startActivity(new Intent(getContext(), chatLogin.class));
             }
         });
 
