@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.hivapp.Dashboard;
+import com.example.hivapp.Login;
 import com.example.hivapp.R;
 import com.example.hivapp.SliderAdapter;
 
@@ -23,6 +25,7 @@ public class OnBoarding extends AppCompatActivity implements View.OnClickListene
     ViewPager viewPager;
     LinearLayout dotsLayout;
     SliderAdapter sliderAdapter;
+    SharedPreferences OnBoardingScreen;
     TextView[] dots;
     Button getStarted;
     Animation animation;
@@ -107,7 +110,11 @@ public class OnBoarding extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.get_started_btn:
-                startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                OnBoardingScreen = getSharedPreferences("onBoardingScreen", MODE_PRIVATE);
+                SharedPreferences.Editor editor =  OnBoardingScreen.edit();
+                editor.putBoolean( "firstTime", true);
+                editor.commit();
+                startActivity(new Intent(getApplicationContext(), Login.class));
                 break;
         }
     }

@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 import com.example.hivapp.Dashboard;
+import com.example.hivapp.Login;
 import com.example.hivapp.R;
 
 public class SplashScreen extends AppCompatActivity {
@@ -40,7 +41,7 @@ public class SplashScreen extends AppCompatActivity {
             }
 
             else {
-                startActivity(new Intent(this, Dashboard.class));
+                startActivity(new Intent(this, Login.class));
                 finish();
             }
 

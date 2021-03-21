@@ -2,8 +2,10 @@ package com.example.hivapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -14,6 +16,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.hivapp.Session.Prevalent;
+import com.example.hivapp.ui.book.BookFragment;
+import com.example.hivapp.ui.home.HomeFragment;
+import com.example.hivapp.ui.store.StoreFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -21,38 +27,19 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Dashboard extends AppCompatActivity {
+    private BottomNavigationView bottomNavigationView;
 
-    FirebaseUser firebaseUser;
-
-   /* @Override
-    protected void onStart() {
-        super.onStart();
-
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        //Check if user is null
-        if (firebaseUser != null){
-            Intent intent = new Intent(Dashboard.this, mainActivity_chat.class);
-            startActivity(intent);
-            finish();
-        }
-    }*/
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-
-
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_book, R.id.nav_store)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupWithNavController(navView, navController);
+        if (Prevalent.currentOnlineUser == null) {
+            startActivity(new Intent(this, Login.class));
+        }
+        bottomNavigationView = findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +52,41 @@ public class Dashboard extends AppCompatActivity {
 
             }
         });
+        if (savedInstanceState== null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new HomeFragment()).commit();
+            bottomNavigationView.setSelectedItemId(R.id.nav_home);}
 
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.nav_home:
+                    getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.fragment_container,
+                            new HomeFragment()).commit();
+                    return true;
+                case R.id.nav_book:
+                    getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.fragment_container,
+                            new BookFragment()).commit();
+                    //MenuItem.se
+                    return true;
+                case R.id.nav_store:
+
+                    getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.fragment_container,
+                            new StoreFragment()).commit();
+                    return true;
+
+            }
+
+
+
+            return false;
+        }
+
+    };
 }

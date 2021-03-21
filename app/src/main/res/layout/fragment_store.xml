@@ -1,24 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.store.StoreFragment" >
+    xmlns:card_view="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="center_horizontal" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/layer1"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="192dp"
+            android:layout_margin="3dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="48dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                <ImageView
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cover"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="fitXY"
+                    app:layout_collapseMode="parallax" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_below="@id/layer1"
+       android:layout_height="wrap_content"
+       >
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="10dp">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:id="@+id/lydescr"
+               android:padding="5dp">
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textAlignment="center"
+                   android:textSize="17dp"
+                   android:layout_margin="2dp"
+                   android:text="HIV medications can help lower your viral load, fight infections, and improve your quality of life. They can lower your chances of transmitting HIV, but if you take them incorrectly, you can still give HIV to others. They're not a cure for HIV.\n\nYour doctor will let you know specifically how you should take your medications. You need to follow the directions exactly, and you shouldn't miss even one dose. If you miss doses, you could develop drug-resistant strains of HIV, and your medication may stop working.\n\nMedication Categories"
+                   android:gravity="center_horizontal" />
+           </LinearLayout>
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:id="@+id/item1"
+               android:layout_height="wrap_content"
+               android:clickable="true"
+               android:layout_below="@+id/lydescr"
+               android:layout_marginRight="1dp"
+               android:layout_marginTop="4dp"
+               android:foreground="?android:attr/selectableItemBackground"
+               android:orientation="vertical"
+               card_view:cardBackgroundColor="@android:color/white"
+               card_view:cardCornerRadius="4dp"
+               card_view:cardElevation="@dimen/cardview_default_elevation">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="70dp"
+                       android:text="Nucleotide Reverse Transcriptase Inhibitors (NRTIs)"
+                       android:gravity="center"
+                       android:textAppearance="?android:textAppearanceLarge"
+                       android:layout_margin="2dp"
+                       android:padding="4dp"
+                       android:layout_weight="1"/>
+
+                   <ImageView
+                       android:layout_width="50dp"
+                       android:layout_height="70dp"
+                       android:padding="3dp"
+                       android:layout_margin="2dp"
+                       android:src="@drawable/ic_navigate"/>
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:id="@+id/item2"
+               android:layout_below="@+id/item1"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="1dp"
+               android:layout_marginLeft="1dp"
+               android:clickable="true"
+               android:layout_marginRight="1dp"
+               android:layout_marginTop="4dp"
+               android:foreground="?android:attr/selectableItemBackground"
+               android:orientation="vertical"
+               card_view:cardBackgroundColor="@android:color/white"
+               card_view:cardCornerRadius="4dp"
+               card_view:cardElevation="@dimen/cardview_default_elevation">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="70dp"
+                       android:text="Non-nucleoside Reverse Transcriptase Inhibitors (NNRTIs)"
+                       android:gravity="center"
+                       android:textAppearance="?android:textAppearanceLarge"
+                       android:layout_margin="2dp"
+                       android:layout_weight="1"/>
+
+                   <ImageView
+                       android:layout_width="50dp"
+                       android:layout_height="70dp"
+                       android:padding="3dp"
+                       android:layout_margin="2dp"
+                       android:src="@drawable/ic_navigate"/>
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:id="@+id/item3"
+               android:layout_below="@id/item2"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="1dp"
+               android:layout_marginLeft="1dp"
+               android:clickable="true"
+               android:layout_marginRight="1dp"
+               android:layout_marginTop="4dp"
+               android:foreground="?android:attr/selectableItemBackground"
+               android:orientation="vertical"
+               card_view:cardBackgroundColor="@android:color/white"
+               card_view:cardCornerRadius="4dp"
+               card_view:cardElevation="@dimen/cardview_default_elevation">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="50dp"
+                       android:text="Protease Inhibitors (PIs)"
+                       android:gravity="center"
+                       android:textAppearance="?android:textAppearanceLarge"
+                       android:layout_margin="2dp"
+                       android:layout_weight="1"/>
+
+                   <ImageView
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"
+                       android:padding="3dp"
+                       android:layout_margin="2dp"
+                       android:src="@drawable/ic_navigate"/>
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:id="@+id/item4"
+               android:layout_below="@+id/item3"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="1dp"
+               android:layout_marginLeft="1dp"
+               android:clickable="true"
+               android:layout_marginRight="1dp"
+               android:layout_marginTop="4dp"
+               android:foreground="?android:attr/selectableItemBackground"
+               android:orientation="vertical"
+               card_view:cardBackgroundColor="@android:color/white"
+               card_view:cardCornerRadius="4dp"
+               card_view:cardElevation="@dimen/cardview_default_elevation">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="50dp"
+                       android:text="Integrase Inhibitors"
+                       android:gravity="center"
+                       android:textAppearance="?android:textAppearanceLarge"
+                       android:layout_margin="2dp"
+                       android:layout_weight="1"/>
+
+                   <ImageView
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"
+                       android:padding="3dp"
+                       android:layout_margin="2dp"
+                       android:src="@drawable/ic_navigate"/>
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/item5"
+               android:layout_below="@+id/item4"
+               android:layout_marginBottom="1dp"
+               android:layout_marginLeft="1dp"
+               android:clickable="true"
+               android:layout_marginRight="1dp"
+               android:layout_marginTop="4dp"
+               android:foreground="?android:attr/selectableItemBackground"
+               android:orientation="vertical"
+               card_view:cardBackgroundColor="@android:color/white"
+               card_view:cardCornerRadius="4dp"
+               card_view:cardElevation="@dimen/cardview_default_elevation">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="50dp"
+                       android:text="Fusion Inhibitors"
+                       android:gravity="center"
+                       android:textAppearance="?android:textAppearanceLarge"
+                       android:layout_margin="2dp"
+                       android:layout_weight="1"/>
+
+                   <ImageView
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"
+                       android:padding="3dp"
+                       android:layout_margin="2dp"
+                       android:src="@drawable/ic_navigate"/>
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/item6"
+               android:layout_below="@+id/item5"
+               android:layout_marginBottom="1dp"
+               android:layout_marginLeft="1dp"
+               android:clickable="true"
+               android:layout_marginRight="1dp"
+               android:layout_marginTop="4dp"
+               android:foreground="?android:attr/selectableItemBackground"
+               android:orientation="vertical"
+               card_view:cardBackgroundColor="@android:color/white"
+               card_view:cardCornerRadius="4dp"
+               card_view:cardElevation="@dimen/cardview_default_elevation">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="50dp"
+                       android:text="gp120 Attachment Inhibitor"
+                       android:gravity="center"
+                       android:textAppearance="?android:textAppearanceLarge"
+                       android:layout_margin="2dp"
+                       android:layout_weight="1"/>
+
+                   <ImageView
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"
+                       android:padding="3dp"
+                       android:layout_margin="2dp"
+                       android:src="@drawable/ic_navigate"/>
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+           <androidx.cardview.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/item7"
+               android:layout_below="@+id/item6"
+               android:layout_marginBottom="1dp"
+               android:layout_marginLeft="1dp"
+               android:clickable="true"
+               android:layout_marginRight="1dp"
+               android:layout_marginTop="4dp"
+               android:foreground="?android:attr/selectableItemBackground"
+               android:orientation="vertical"
+               card_view:cardBackgroundColor="@android:color/white"
+               card_view:cardCornerRadius="4dp"
+               card_view:cardElevation="@dimen/cardview_default_elevation">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="50dp"
+                       android:text="CCR5 Antagonist"
+                       android:gravity="center"
+                       android:textAppearance="?android:textAppearanceLarge"
+                       android:layout_margin="2dp"
+                       android:layout_weight="1"/>
+
+                   <ImageView
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"
+                       android:padding="3dp"
+                       android:layout_margin="2dp"
+                       android:src="@drawable/ic_navigate"/>
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+       </RelativeLayout>
+   </ScrollView>
+</RelativeLayout>
+
+

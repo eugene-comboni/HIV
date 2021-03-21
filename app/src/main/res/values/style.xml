@@ -8,8 +8,14 @@
         <item name="colorOnPrimary">#000</item>
     </style>
 
-    <style name="MenuStyle" parent = "Theme.AppCompat.Light">
+    <style name="MenuStyle" parent="Theme.AppCompat.Light">
         <item name="android:background">@android:color/white</item>
     </style>
+    //ratings
 
+    <style name="rating" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/color_gold</item>
+    </style>
 </resources>

@@ -29,4 +29,7 @@
     <string name="store">Store</string>
     <string name="title_activity_dashboard">MainActivity</string>
     <string name="hello_user_fragment">Hello user</string>
+    <string name="whatishiv">HIV is a virus that damages the immune system. Untreated HIV affects and kills CD4 cells, which are a type of immune cell called T cell.  \nOver time, as HIV kills more CD4 cells, the body is more likely to get various types of conditions and cancers.  \nHIV is transmitted through bodily fluids that include:  \n\n1.blood \n2.semen \n3.vaginal and rectal fluids \n4.breast milk\n.....</string>
+    <string name="hivconnect">To develop AIDS, a person has to have contracted HIV. \nBut having HIV doesn’t necessarily mean that someone will develop AIDS.  \n\nCases of HIV progress through three stages:  \nstage 1: acute stage, the first few weeks after transmission \nstage 2: clinical latency, or chronic stage \nstage 3: AIDS</string>
+    <string name="hivcauses">HIV is a variation of a virus that can be transmitted to African chimpanzees. \nScientists suspect the simian immunodeficiency virus (SIV) jumped from chimps to humans when people consumed chimpanzee meat containing the virus.  \nOnce inside the human population, the virus mutated into what we now know as HIV. \nThis likely occurred as long ago as the 1920s.</string>
 </resources>
