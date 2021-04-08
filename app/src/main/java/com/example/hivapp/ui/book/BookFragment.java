@@ -158,7 +158,7 @@ public class BookFragment extends Fragment {
             return;
         } else if (TextUtils.isEmpty(udate)) {
             datee.setError("Date is required!!");
-        }
+        }else
         {
             pDialog.setTitle("Updating Account");
             pDialog.setMessage("Please wait, while we are checking the credentials.");

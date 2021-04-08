@@ -69,6 +69,7 @@
                    android:layout_margin="2dp"
                    android:text="HIV medications can help lower your viral load, fight infections, and improve your quality of life. They can lower your chances of transmitting HIV, but if you take them incorrectly, you can still give HIV to others. They're not a cure for HIV.\n\nYour doctor will let you know specifically how you should take your medications. You need to follow the directions exactly, and you shouldn't miss even one dose. If you miss doses, you could develop drug-resistant strains of HIV, and your medication may stop working.\n\nMedication Categories"
                    android:gravity="center_horizontal" />
+
            </LinearLayout>
 
            <androidx.cardview.widget.CardView
@@ -353,6 +354,7 @@
 
        </RelativeLayout>
    </ScrollView>
+
 </RelativeLayout>
 
 

@@ -10,10 +10,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:src="@drawable/chat"
-        android:tint="@color/black"
-       app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:backgroundTint="@color/colorAccent"
+        android:src="@drawable/whatsapp"
+
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:backgroundTint="#0F9D58"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent" />
@@ -38,6 +38,8 @@
             android:layout_gravity="bottom"
             android:background="?android:attr/windowBackground"
             android:foreground="?attr/selectableItemBackground"
+            app:itemIconTint="@color/bnv_tab_item"
+            app:itemTextColor="@color/bnv_tab_item"
             app:elevation="10dp"
             app:labelVisibilityMode="labeled"
             app:layout_constraintTop_toBottomOf="@+id/fragment_container"

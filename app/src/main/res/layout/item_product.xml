@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="wrap_content"
+<LinearLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/tools"
     app:ignore="NamespaceTypo">
 
     <androidx.cardview.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="150dp"
         android:layout_height="235dp"
         android:layout_marginBottom="10dp"
@@ -92,11 +92,12 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/edt_product_btn"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="320dp"
                         android:layout_gravity="center"
                         android:text="Proceed"
-                        android:id="@+id/edt_product_btn"
+                        android:backgroundTint="#49C4DF"
                         android:textColor="@color/colorProduct"
                         android:textSize="14sp" />
 

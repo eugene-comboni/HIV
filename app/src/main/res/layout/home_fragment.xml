@@ -82,7 +82,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Read More"
-                            android:id="@+id/whatishiv"/>
+                            android:id="@+id/whatishiv"
+                            android:backgroundTint="#49C4DF"/>
+
                     </LinearLayout>
 
                 </LinearLayout>
@@ -113,7 +115,9 @@
                         android:text=">"
                         android:id="@+id/infobook"
                         android:layout_weight="0.5"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#49C4DF"/>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -175,7 +179,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Read More"
-                            android:id="@+id/hivconnection"/>
+                            android:id="@+id/hivconnection"
+                            android:backgroundTint="#49C4DF"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -205,7 +210,9 @@
                         android:text=">"
                         android:id="@+id/infomedication"
                         android:layout_weight="0.5"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#49C4DF"/>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -266,7 +273,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Read More"
-                            android:id="@+id/hivtransmission"/>
+                            android:id="@+id/hivtransmission"
+                            android:backgroundTint="#49C4DF"/>
+
                     </LinearLayout>
 
                 </LinearLayout>

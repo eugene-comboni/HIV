@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="#49C4DF"
+            android:backgroundTint="#49C4DF"
             android:text="Register"
             android:textColor="#ffffff" />
 
@@ -68,6 +68,16 @@
             android:text="Already have an account? Sigin"
             android:textAlignment="center"
             android:textSize="20sp"/>
+
+        <ProgressBar
+            android:id="@+id/ProgressBar01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progress_bg"
+            android:progress="0"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 

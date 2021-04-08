@@ -97,7 +97,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    startActivity(new Intent(Login.this, Dashboard.class));
+                    /*startActivity(new Intent(Login.this, Dashboard.class));*/
+                    progressBar.getProgress();
                     FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
                     String uid= currentFirebaseUser.getUid();
                     final DatabaseReference RootRef;
@@ -107,7 +108,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             User usersData = snapshot.child("Users").child(uid).getValue(User.class);
                             Prevalent.currentOnlineUser=usersData;
-                            startActivity(new Intent(Login.this,Dashboard.class));
+                            startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         }
 
                         @Override

@@ -222,7 +222,8 @@ The FDA has approved more than two dozen antiretroviral drugs to treat HIV infec
                             android:layout_width="wrap_content"
                             android:onClick="SendRequest"
                             android:text="Submit Delivery Request"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#49C4DF"/>
                     </LinearLayout>
                 </LinearLayout>
 

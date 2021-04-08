@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:backgroundTint="@color/white"
     tools:context=".mainActivity_chat">
     
     <com.google.android.material.appbar.AppBarLayout
@@ -15,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/design_default_color_primary_dark"
+            android:background="#0F9D58"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/MenuStyle">
             
@@ -40,7 +41,7 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/design_default_color_primary_dark"
+            android:background="#0F9D58"
             app:tabSelectedTextColor="@color/white"
             app:tabIndicator="@color/white"
             app:tabTextColor="@color/white"/>

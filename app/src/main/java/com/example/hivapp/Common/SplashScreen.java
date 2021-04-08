@@ -14,7 +14,7 @@ import com.example.hivapp.R;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private static int SPLASH_SCREENS = 5000;
+    private static int SPLASH_SCREENS = 2000;
 
     SharedPreferences OnBoardingScreen;
 

@@ -101,7 +101,8 @@
             android:textAlignment="center"
             android:textAppearance="@android:style/TextAppearance.Large"
             android:textColor="@android:color/black"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
 
@@ -144,8 +145,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_area"
+            android:layout_marginTop="20dp"
+            android:bottomLeftRadius="5dp"
+            android:bottomRightRadius="5dp"
+            android:topLeftRadius="5dp"
+            android:topRightRadius="5dp"
+            android:fontFamily="@font/baloo"
+            android:backgroundTint="#49C4DF"
             android:padding="10dp"
             android:text="Send Appointment"
             android:textAppearance="?android:textAppearanceLarge"

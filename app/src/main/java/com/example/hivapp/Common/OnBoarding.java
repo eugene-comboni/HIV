@@ -3,9 +3,11 @@ package com.example.hivapp.Common;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Html;
 import android.view.View;
 import android.view.WindowManager;
@@ -30,12 +32,40 @@ public class OnBoarding extends AppCompatActivity implements View.OnClickListene
     Button getStarted;
     Animation animation;
     int currentPos;
+    String prev_Seen = "yes";
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences sharedpreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+        if (!sharedpreferences.getBoolean(prev_Seen, false)) {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean(prev_Seen, Boolean.TRUE);
+            editor.apply();
+        } else {
+            moveToSecondary();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_on_boarding);
+
+      /*  SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        // Check if we need to display our OnboardingSupportFragment
+        if (!sharedPreferences.getBoolean("onboarding_complete", false)) {
+            // The user hasn't seen the OnboardingSupportFragment yet, so show it
+            startActivity(new Intent(this, OnBoarding.class));
+
+            finish();
+            return;
+        }*/
+
+
 
         getStarted = findViewById(R.id.get_started_btn);
         getStarted.setOnClickListener(this);
@@ -74,7 +104,7 @@ public class OnBoarding extends AppCompatActivity implements View.OnClickListene
         }
 
         if (dots.length > 0) {
-            dots[position].setTextColor(getResources().getColor(R.color.design_default_color_primary_dark));
+            dots[position].setTextColor(getResources().getColor(R.color.color_black));
         }
     }
 
@@ -117,5 +147,11 @@ public class OnBoarding extends AppCompatActivity implements View.OnClickListene
                 startActivity(new Intent(getApplicationContext(), Login.class));
                 break;
         }
+    }
+
+    public void moveToSecondary(){
+        // use an intent to travel from one activity to another.
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
     }
 }

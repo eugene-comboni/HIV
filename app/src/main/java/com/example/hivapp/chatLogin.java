@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class chatLogin extends AppCompatActivity {
 
     EditText email, password;
     Button btnLogin;
+    private ProgressBar progressBar;
 
     FirebaseAuth mAuth;
     TextView forgot_password;
@@ -57,11 +59,13 @@ public class chatLogin extends AppCompatActivity {
                     Toast.makeText( chatLogin.this, "All fields are required", Toast.LENGTH_LONG).show();
                 }else {
 
+                    progressBar.setVisibility(View.VISIBLE);
                     mAuth.signInWithEmailAndPassword(txt_email, txt_password)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()){
+                                        progressBar.getProgress();
                                         Intent intent = new Intent(chatLogin.this, mainActivity_chat.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
@@ -82,7 +86,7 @@ public class chatLogin extends AppCompatActivity {
         password = findViewById(R.id.password);
         btnLogin = findViewById(R.id.btn_Login);
         forgot_password = findViewById(R.id.forgot_password);
-
+        progressBar = findViewById(R.id.progressBar);
 
     }
 }

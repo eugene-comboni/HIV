@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="Login"
             android:id="@+id/btn_Login"
-            android:background="@color/colorPrimaryDark"
+            android:backgroundTint="#49C4DF"
             android:textColor="#ffffff"
             android:layout_marginTop="10dp"
             />
@@ -62,6 +62,16 @@
             android:text="Forgot your Password?"
             android:textAlignment="center"
             android:textSize="20sp"/>
+
+        <ProgressBar
+            android:id="@+id/ProgressBar01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progress_bg"
+            android:progress="0"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 

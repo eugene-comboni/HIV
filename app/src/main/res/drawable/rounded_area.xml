@@ -11,6 +11,7 @@
         android:topRightRadius="5dp" />
 
     <stroke android:color="#A7A7A7"
+        android:backgroundTint="#49C4DF"
         android:width="1dp" />
 
 </shape>

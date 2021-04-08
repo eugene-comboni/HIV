@@ -45,10 +45,10 @@ public class Dashboard extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Meet new people", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
-                startActivity(new Intent(getApplicationContext(), chatReg.class));
+                startActivity(new Intent(getApplicationContext(), mainActivity_chat.class));
 
             }
         });
